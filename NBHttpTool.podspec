@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = 'NBHttpTool'
   s.version          = '0.1.0'
-  s.summary          = 'NBHttpTool.'
+  s.summary          = 'NBHttpTool修改'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -36,7 +36,7 @@ NBHttpTool网络请求封装的基础
   #   'NBHttpTool' => ['NBHttpTool/Assets/*.png']
   # }
 
-  s.public_header_files = 'Pod/Classes/**/*.h'
-  s.frameworks = 'UIKit', 'MapKit'
+  # s.public_header_files = 'Pod/Classes/**/*.h'
+  # s.frameworks = 'UIKit', 'MapKit'
   s.dependency 'AFNetworking'
 end

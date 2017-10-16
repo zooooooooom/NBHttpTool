@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "AFNetworking.h"
+@class AFNetworking;
 
 typedef NS_ENUM(NSUInteger, NBHttpType) {
     NBHttpTypeGET,

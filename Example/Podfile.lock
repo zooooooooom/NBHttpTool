@@ -1,0 +1,16 @@
+PODS:
+  - NBHttpTool (0.1.0)
+
+DEPENDENCIES:
+  - NBHttpTool (from `../`)
+
+EXTERNAL SOURCES:
+  NBHttpTool:
+    :path: ../
+
+SPEC CHECKSUMS:
+  NBHttpTool: f54797a326aef02a6d0b8d2a15fe0321e597e9bc
+
+PODFILE CHECKSUM: 749e87fbcdc67f5059f0f0044554ffd87c28989c
+
+COCOAPODS: 1.4.0.beta.1

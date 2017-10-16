@@ -1,0 +1,6 @@
+framework module Pods_NBHttpTool_Tests {
+  umbrella header "Pods-NBHttpTool_Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}

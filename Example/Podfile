@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'NBHttpTool_Example' do
+  pod 'NBHttpTool', :path => '../'
+
+  target 'NBHttpTool_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end

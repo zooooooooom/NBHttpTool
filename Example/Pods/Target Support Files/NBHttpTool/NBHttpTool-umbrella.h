@@ -10,6 +10,7 @@
 #endif
 #endif
 
+#import "NBHttpTool.h"
 
 FOUNDATION_EXPORT double NBHttpToolVersionNumber;
 FOUNDATION_EXPORT const unsigned char NBHttpToolVersionString[];

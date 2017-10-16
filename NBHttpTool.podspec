@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-网络请求封装的基础
+NBHttpTool网络请求封装的基础
                        DESC
 
   s.homepage         = 'https://github.com/shiyingfeng/NBHttpTool'
@@ -38,5 +38,5 @@ Pod::Spec.new do |s|
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
-  s.dependency 'AFNetworking', '~> 2.3'
+  s.dependency 'AFNetworking', '~> 3.0'
 end

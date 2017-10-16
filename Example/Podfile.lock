@@ -1,5 +1,21 @@
 PODS:
-  - NBHttpTool (0.1.0)
+  - AFNetworking (3.1.0):
+    - AFNetworking/NSURLSession (= 3.1.0)
+    - AFNetworking/Reachability (= 3.1.0)
+    - AFNetworking/Security (= 3.1.0)
+    - AFNetworking/Serialization (= 3.1.0)
+    - AFNetworking/UIKit (= 3.1.0)
+  - AFNetworking/NSURLSession (3.1.0):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.1.0)
+  - AFNetworking/Security (3.1.0)
+  - AFNetworking/Serialization (3.1.0)
+  - AFNetworking/UIKit (3.1.0):
+    - AFNetworking/NSURLSession
+  - NBHttpTool (0.1.0):
+    - AFNetworking (~> 3.0)
 
 DEPENDENCIES:
   - NBHttpTool (from `../`)
@@ -9,7 +25,8 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  NBHttpTool: f54797a326aef02a6d0b8d2a15fe0321e597e9bc
+  AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  NBHttpTool: 01cce52d3f5938e0c66ff14263f1492650b6b31c
 
 PODFILE CHECKSUM: 749e87fbcdc67f5059f0f0044554ffd87c28989c
 

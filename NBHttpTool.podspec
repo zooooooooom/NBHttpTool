@@ -38,5 +38,5 @@ NBHttpTool网络请求封装的基础
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
-  s.dependency 'AFNetworking/AFNetworking.h', '~> 3.0'
+  s.dependency 'AFNetworking'
 end

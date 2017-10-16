@@ -62,10 +62,10 @@
 		783CC1AA920C67840D81234F /* Pods_NBHttpTool_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NBHttpTool_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		78B81C00BCE1E359B04B18D8 /* Pods-NBHttpTool_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NBHttpTool_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-NBHttpTool_Example/Pods-NBHttpTool_Example.release.xcconfig"; sourceTree = "<group>"; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		AA258B40C255C0A08EAE80E2 /* NBHttpTool.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = NBHttpTool.podspec; path = ../NBHttpTool.podspec; sourceTree = "<group>"; };
-		B70FAEE92B0C493E100BF849 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		AA258B40C255C0A08EAE80E2 /* NBHttpTool.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = NBHttpTool.podspec; path = ../NBHttpTool.podspec; sourceTree = "<group>"; };
+		B70FAEE92B0C493E100BF849 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		BC790B2BCB49A84FC0B24A91 /* Pods-NBHttpTool_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NBHttpTool_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NBHttpTool_Tests/Pods-NBHttpTool_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		D6F478B9FF9E37B36A0E5A29 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		D6F478B9FF9E37B36A0E5A29 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		E2449D968371E330E7667F89 /* Pods-NBHttpTool_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NBHttpTool_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-NBHttpTool_Tests/Pods-NBHttpTool_Tests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -490,7 +490,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -523,7 +523,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;

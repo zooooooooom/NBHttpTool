@@ -36,7 +36,7 @@ NBHttpTool网络请求封装的基础
   #   'NBHttpTool' => ['NBHttpTool/Assets/*.png']
   # }
 
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
+  s.public_header_files = 'Pod/Classes/**/*.h'
+  s.frameworks = 'UIKit', 'MapKit'
   s.dependency 'AFNetworking'
 end

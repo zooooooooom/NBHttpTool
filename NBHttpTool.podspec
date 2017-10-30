@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'NBHttpTool'
-  s.version          = '0.1.0'
+  s.version          = '0.2.0'
   s.summary          = 'NBHttpTool修改'
 
 # This description is used to generate tags and improve search results.

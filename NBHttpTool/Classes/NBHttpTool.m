@@ -23,13 +23,18 @@ static AFHTTPSessionManager *_sessionManager;
         
         _sessionManager = [[AFHTTPSessionManager alloc] initWithBaseURL:[NSURL URLWithString:_baseUrl]];
         
-        // 自定义请求，为JSON格式
-        _sessionManager.requestSerializer = [AFJSONRequestSerializer serializer];
+        AFHTTPRequestSerializer *requestSerializer = [AFJSONRequestSerializer serializer];
+        
+        [requestSerializer setValue:@"application/x-www-form-urlencoded; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
+        
+        _sessionManager.requestSerializer = requestSerializer;
         
         // 自定义响应
         AFHTTPResponseSerializer *responseSerializer = [AFJSONResponseSerializer serializer];
         
         responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript",@"text/html", nil];
+        
+        _sessionManager.responseSerializer = responseSerializer;
         
     }
     return _sessionManager;
@@ -95,3 +100,4 @@ static NSString *_baseUrl;
 
 
 @end
+

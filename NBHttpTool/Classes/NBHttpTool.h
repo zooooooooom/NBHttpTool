@@ -16,28 +16,21 @@ typedef NS_ENUM(NSUInteger, NBHttpType) {
 
 @interface NBHttpTool : NSObject
 
-+ (void)setBaseUrl:(NSString *)baseUrl;
+- (void)setTimeOut:(NSTimeInterval)timeInterval;
 
-+ (void)setTimeOut:(NSTimeInterval)timeInterval;
-
-+ (void)setValue:(NSString *)value forHTTPHeaderField:(NSString *)HeaderField;
-
+- (void)setValue:(NSString *)value forHTTPHeaderField:(NSString *)HeaderField;
 
 /**
  网络请求的封装
- 
+
  @param requestType 请求类型(枚举值)
  @param urlStr 请求地址
  @param param 请求参数
- @param success 成功的回调
- @param failure 失败的回调
+ @param resultBlock 请求结果
  */
-+ (NSURLSessionTask *)request:(NBHttpType)requestType urlStr: (NSString *)urlStr parameter: (NSDictionary *)param success:(void (^)(id responseObject))success failure:(void (^)(NSError * error))failure;
+- (void)request:(NBHttpType)requestType urlStr: (NSString *)urlStr parameter: (NSDictionary *)param resultBlock: (void(^)(id responseObject, NSError *error))resultBlock;
 
-/**
- *  取消所有的网络请求
- */
-+ (void)cancelAllOperations;
+- (void)cancel;
 
 
 @end

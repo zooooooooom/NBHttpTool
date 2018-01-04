@@ -10,25 +10,25 @@
 #import "AFNetworking.h"
 
 @interface NBHttpTool()
-
+@property (nonatomic, strong) AFHTTPSessionManager *sessionManager;
 @end
 
 @implementation NBHttpTool
 
 static AFHTTPSessionManager *_sessionManager;
 
-+ (AFHTTPSessionManager *)sessionManager
+- (AFHTTPSessionManager *)sessionManager
 {
     if (_sessionManager == nil) {
         
-        _sessionManager = [[AFHTTPSessionManager alloc] initWithBaseURL:[NSURL URLWithString:_baseUrl]];
+        _sessionManager = [AFHTTPSessionManager manager];
         
-        AFHTTPRequestSerializer *requestSerializer = [AFJSONRequestSerializer serializer];
-        
+        AFHTTPRequestSerializer *requestSerializer = [AFHTTPRequestSerializer serializer];
+
         [requestSerializer setValue:@"application/x-www-form-urlencoded; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
-        
+
         _sessionManager.requestSerializer = requestSerializer;
-        
+
         // 自定义响应
         AFHTTPResponseSerializer *responseSerializer = [AFJSONResponseSerializer serializer];
         
@@ -40,63 +40,39 @@ static AFHTTPSessionManager *_sessionManager;
     return _sessionManager;
 }
 
-static NSString *_baseUrl;
-+ (void)setBaseUrl:(NSString *)baseUrl
+- (void)setTimeOut:(NSTimeInterval)timeInterval
 {
-    _baseUrl = baseUrl;
+    self.sessionManager.requestSerializer.timeoutInterval = timeInterval;
 }
 
-+ (void)setTimeOut:(NSTimeInterval)timeInterval
+- (void)setValue:(NSString *)value forHTTPHeaderField:(NSString *)HeaderField
 {
-    [self sessionManager].requestSerializer.timeoutInterval = timeInterval;
+    [self.sessionManager.requestSerializer setValue:value forHTTPHeaderField:HeaderField];
 }
 
-+ (void)setValue:(NSString *)value forHTTPHeaderField:(NSString *)HeaderField
+- (void)request:(NBHttpType)requestType urlStr: (NSString *)urlStr parameter: (NSDictionary *)param resultBlock: (void(^)(id responseObject, NSError *error))resultBlock
 {
-    [[self sessionManager].requestSerializer setValue:value forHTTPHeaderField:HeaderField];
-}
-
-+ (NSURLSessionTask *)request:(NBHttpType)requestType urlStr: (NSString *)urlStr parameter: (NSDictionary *)param success:(void (^)(id responseObject))success failure:(void (^)(NSError * error))failure
-{
-    NSLog(@"%@",[self sessionManager]);
+    
+    void(^successBlock)(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) = ^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        resultBlock(responseObject, nil);
+    };
+    
+    void(^failBlock)(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) = ^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        resultBlock(nil, error);
+    };
+    
     if (requestType == NBHttpTypeGET) {
-        
-        NSURLSessionTask *task = [self.sessionManager GET:urlStr parameters:param progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-            if (success) {
-                success(responseObject);
-            }
-            
-        } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-            if (failure) {
-                failure(error);
-            }
-        }];
-        return task;
-        
-    } else {
-        
-        NSURLSessionTask *task = [self.sessionManager POST:urlStr parameters:param progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-            if (success) {
-                success(responseObject);
-            }
-            
-        } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-            if (failure) {
-                failure(error);
-            }
-            
-        }];
-        return task;
+        [self.sessionManager GET:urlStr parameters:param progress:nil success:successBlock failure:failBlock];
+    }else {
+        [self.sessionManager POST:urlStr parameters:param progress:nil success:successBlock failure:failBlock];
     }
 }
 
-/**
- *  取消所有的网络请求
- */
-+ (void)cancelAllOperations
+- (void)cancel
 {
-    [[self sessionManager].operationQueue cancelAllOperations];
+    [self.sessionManager.operationQueue cancelAllOperations];
 }
+
 
 
 @end
